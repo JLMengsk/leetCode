@@ -5,6 +5,7 @@
 # @File     : Max_Consecutive_Ones.py
 # @Software : PyCharm
 
+# Given a binary array, find the maximum number of consecutive 1s in this array
 class Solution1:
     def findMaxConsecutiveOnes(self, nums):
         """
