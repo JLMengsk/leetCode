@@ -37,6 +37,7 @@ class Solution1:
 
 # This is a very smart way to transfer number to str
 # So we could calculate the length
+# Try to use a concise way
 class Solution2:
     def findNumbers(self, nums):
         return len([i for i in nums if len(str(i)) % 2 == 0])
