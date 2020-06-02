@@ -58,3 +58,27 @@ s = Solution1()
 print(s.duplicateZeros([1, 0, 2, 3, 0, 4, 5, 0]))
 s = Solution2()
 print(s.duplicateZeros([1, 0, 2, 3, 0, 4, 5, 0]))
+
+
+class Solution3:
+    def duplicateZeros(self, arr):
+        """
+        Do not return anything, modify arr in-place instead.
+        """
+        len_arr = len(arr)
+        lst = []
+        for num in arr:
+            if num == 0:
+                lst.append(0)
+                lst.append(0)
+            else:
+                lst.append(num)
+            if len(lst) >= len_arr:
+                arr[:] = lst[:len_arr]
+                # arr=rst[:len_arr] this do not work
+                # 这道题要注意的是当用第一张方法的时候，记得要直接改变arr指向的值，而不是改变它引用本身，
+                # 因为leetcode判定程序还是记录着一开始的引用值，可以去了解一下leetcode的变量引用机制。
+        return arr
+
+s = Solution3()
+print(s.duplicateZeros([1, 0, 2, 3, 0, 4, 5, 0]))
