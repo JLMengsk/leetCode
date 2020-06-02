@@ -16,5 +16,12 @@ class Solution1:
         return A
 
 
+class Solution2:
+    def sortedSquares(self, A):
+        return sorted([i * i for i in A])
+
+
 s = Solution1()
+print(s.sortedSquares([-4, -1, 0, 3, 10]))
+s = Solution2()
 print(s.sortedSquares([-4, -1, 0, 3, 10]))
