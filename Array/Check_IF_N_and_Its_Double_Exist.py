@@ -30,7 +30,7 @@
 
 class Solution1:
     def checkIfExist(self, arr):
-        for i, a in enumerate(arr):
+        for i, a in enumerate(arr):    # This is a good way to get index and value
             for j, b in enumerate(arr):
                 if i != j and a * 2 == b:
                     return True
