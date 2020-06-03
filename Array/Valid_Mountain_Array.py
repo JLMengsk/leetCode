@@ -17,16 +17,21 @@
 #                 for j in range(maxidx+1,len(A)+1):
 #                 # for j in range(-1,-(len(A)-A.index(maxnum))):
 #                     if j+1 < len(A):
-#                         if A[j] > A[j+1]:
+#                         if A[j] > A[j+1]:   # out of range  Don't use ADD!
 #                             return True
 #             return False
+
+# Example
+# index 0 1 2 3 4 5 6 7 8 9 10
+# Value 1 2 3 4 5 6 7 6 5 4 3
+#                  max
 
 class Solution1:
     def validMountainArray(self, A):
         if len(A) < 3:
             return False
         maxidx = A.index(max(A))
-        if (maxidx == 0) or (maxidx == len(A) - 1):
+        if (maxidx == 0) or (maxidx == len(A) - 1):   # Need to consider more situation before test
             return False
         for i in range(0, maxidx):
             if (A[i + 1] <= A[i]):
@@ -56,7 +61,7 @@ class Solution2:
 
         while True:
             if A[-2] < A[-1]:
-                A.pop()
+                A.pop()   # Use pop to save time
             else:
                 break
 
