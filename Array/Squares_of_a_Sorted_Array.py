@@ -19,10 +19,23 @@ class Solution1:
 class Solution2:
     def sortedSquares(self, A):
         return sorted([i * i for i in A])
+
+
 # sorted() and sort()
 
+class Solution3:
+    def sortedSquares(self, A):
+        j = 0
+        for i in range(0, len(A)):
+            if (A[i]) ** 2 > (A[j] ** 2):
+                if i != j:
+                    A[i], A[j] = A[j]**2, A[i]
+                j += 1
+        return A
 
 s = Solution1()
 print(s.sortedSquares([-4, -1, 0, 3, 10]))
 s = Solution2()
+print(s.sortedSquares([-4, -1, 0, 3, 10]))
+s = Solution3()
 print(s.sortedSquares([-4, -1, 0, 3, 10]))
