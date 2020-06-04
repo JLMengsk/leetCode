@@ -92,6 +92,14 @@ class Solution4:
             count += 1
         return nums
 
+class Solution5:
+    def moveZeroes(self, A):
+        j = 0
+        for i in range(0, len(A)):
+            if A[i] != 0:
+                A[i], A[j] = A[j], A[i]
+                j += 1
+        return A
 
 s = Solution1()
 print(s.moveZeroes([2, 1]))
@@ -100,4 +108,6 @@ print(s.moveZeroes([0, 1, 0, 3, 12]))
 s = Solution3()
 print(s.moveZeroes([0, 1, 0, 3, 12]))
 s = Solution4()
+print(s.moveZeroes([0, 1, 0, 3, 12]))
+s = Solution5()
 print(s.moveZeroes([0, 1, 0, 3, 12]))
