@@ -19,7 +19,7 @@ class Solution1:
             # if a == nums[i]:  # This a is useless
             if nums[i] == 1:
                 count += 1
-                max = max if max > count else count # COOL METHOD
+                max = max if max > count else count  # COOL METHOD
                 # if count > max:
                 #     max = count  # need to compare with the max number
             else:
@@ -38,3 +38,7 @@ class Solution2:
         :rtype: int
         """
         return len(max("".join(map(str, nums)).split("0")))
+
+
+s = Solution2()
+print(s.findMaxConsecutiveOnes([0, 1, 1, 1, 0, 1, 1]))
