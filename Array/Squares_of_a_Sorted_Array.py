@@ -23,15 +23,30 @@ class Solution2:
 
 # sorted() and sort()
 
+# class wrong_Solution:
+#     def sortedSquares(self, A):
+#         j = 0
+#         for i in range(0, len(A)):
+#             if (A[i]) ** 2 > (A[j] ** 2):
+#                 if i != j:
+#                     A[i], A[j] = A[j]**2, A[i]**2   Can't change both of them in the sametime
+#                 j += 1
+#         return A
+
 class Solution3:
     def sortedSquares(self, A):
-        j = 0
-        for i in range(0, len(A)):
-            if (A[i]) ** 2 > (A[j] ** 2):
-                if i != j:
-                    A[i], A[j] = A[j]**2, A[i]
-                j += 1
-        return A
+        i = 0
+        j = len(A) - 1
+        ans = []
+        while i <= j:
+            if abs(A[i]) >= A[j]:
+                ans.append(A[i] * A[i])
+                i += 1
+            else:
+                ans.append(A[j] * A[j])
+                j -= 1
+        return ans[::-1]
+
 
 s = Solution1()
 print(s.sortedSquares([-4, -1, 0, 3, 10]))
