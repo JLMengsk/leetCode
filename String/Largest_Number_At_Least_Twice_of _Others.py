@@ -22,19 +22,31 @@ class Solution1:
             return nums.index(m1)
         return -1
 
+class Solution2:
+    def dominantIndex(self, nums):
+        if len(nums) < 2:
+            return 0
+        else:
+            sort = sorted(nums)
+            if sort[-1] >= 2*sort[-2]:
+                return nums.index(sort[-1])
+        return -1
 
-# class Solution2:
-#     def dominantIndex(self, nums):
-#         checked = []
-#         max = nums[0]
-#         for i in range(len(nums)):
-#             if max != nums[i] and max >= 2 * nums[i]:
-#                 return nums.index(max)
-#             else:
-#                 checked.append(nums[i])
+class Solution3:
+    def dominantIndex(self, nums):
+        maxIndex = 0
+        for i in range(0,len(nums)):
+            if (nums[i] > nums[maxIndex]):
+                maxIndex = i
 
+        for i in range(len(nums)):
+            if (maxIndex != i and nums[maxIndex] < (2*nums[i])):
+                return -1
+        return maxIndex
 
 s = Solution1()
 print(s.dominantIndex([1, 2, 3, 4]))
 s = Solution2()
+print(s.dominantIndex([1, 2, 3, 4]))
+s = Solution3()
 print(s.dominantIndex([1, 2, 3, 4]))
