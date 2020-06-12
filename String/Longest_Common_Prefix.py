@@ -22,16 +22,19 @@ class Solution1:
                 if l >= len(strs[i]) or c != strs[i][l]:
                     return strs[0][:l]
         return strs[0]
+
+
 # GOOD way use enumerate
 class Solution2:
     def longestCommonPrefix(self, strs):
-        if len(strs)==0:
+        if len(strs) == 0:
             return ""
         pref = strs[0]
         for i, item in enumerate(strs):
             while not strs[i].find(pref) == 0:
                 pref = pref[:-1]
         return pref
+
 
 s = Solution1()
 print(s.longestCommonPrefix(["flower", "flow", "flight"]))
