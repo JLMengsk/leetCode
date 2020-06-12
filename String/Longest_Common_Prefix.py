@@ -36,7 +36,29 @@ class Solution2:
         return pref
 
 
+class Solution3:
+    def longestCommonPrefix(self, strs):
+        if not strs:
+            return ""
+        for i, chars in enumerate(zip(*strs)):
+            """
+            i: 0
+            chars: ('f', 'f', 'f')
+            i: 1
+            chars: ('l', 'l', 'l')
+            i: 2
+            chars: ('o', 'o', 'i')
+            i: 3
+            chars: ('w', 'w', 'g')
+            """
+            if len(set(chars)) > 1:
+                return strs[0][:i]
+        return min(strs)
+
+
 s = Solution1()
 print(s.longestCommonPrefix(["flower", "flow", "flight"]))
 s = Solution2()
+print(s.longestCommonPrefix(["flower", "flow", "flight"]))
+s = Solution3()
 print(s.longestCommonPrefix(["flower", "flow", "flight"]))
