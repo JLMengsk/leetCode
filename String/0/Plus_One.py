@@ -11,6 +11,16 @@
 class Solution1:
     def plusOne(self, digits):
         return list(map(int, [char for char in str(int("".join([str(s) for s in digits])) + 1)]))
+
+
+# Or
+# st = ''
+# for item in digits:
+#     st += str(item)
+# st = str(int(st) + 1)
+# return st
+
+# Or
 # Very important way
 # results = list(map(str,digits))
 
@@ -38,7 +48,7 @@ class Solution2:
                 flag = 0
 
         if flag == 1:
-            digits.insert(0, 1)
+            digits.insert(0, 1)  # list.insert(index, obj)
         return digits
 
 
