@@ -19,6 +19,7 @@ class Solution1:
         # No values that meet the condition return -1
 
 
+# 2a + b = sum
 class Solution2:
     def pivotIndex(self, nums):
         index = -1
@@ -36,7 +37,21 @@ class Solution2:
         return index
 
 
+# When we refer to index and value! Think about enumerate
+class Solution3:
+    def pivotIndex(self, nums):
+        S = sum(nums)
+        leftsum = 0
+        for i, x in enumerate(nums):
+            if leftsum == (S - leftsum - x):
+                return i
+            leftsum += x
+        return -1
+
+
 s = Solution1()
 print(s.pivotIndex([1, 7, 3, 6, 5, 6]))
 s = Solution2()
+print(s.pivotIndex([1, 7, 3, 6, 5, 6]))
+s = Solution3()
 print(s.pivotIndex([1, 7, 3, 6, 5, 6]))
