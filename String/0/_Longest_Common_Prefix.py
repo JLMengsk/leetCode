@@ -8,6 +8,13 @@
 # Write a function to find the longest common prefix string amongst an array of strings.
 # If there is no common prefix, return an empty string "".
 
+# Need do this one again
+
+
+# class wrong_Solution:
+#     def longestCommonPrefix(self, strs):
+#         for i in range(0,len(strs)):
+#             set()
 
 # if l >= len(strs[i]) or c != strs[i][l]:
 # 这句是说指针超出了某一个元素长度，或者某一位不相等了，那么返回前面相等的即可strs[0][:l]，
@@ -32,7 +39,7 @@ class Solution2:
         pref = strs[0]
         for i, item in enumerate(strs):
             while not strs[i].find(pref) == 0:
-                pref = pref[:-1]
+                pref = pref[:-1]  # from longest to shortest
         return pref
 
 
@@ -45,6 +52,8 @@ class Solution2:
 # [(1, 4), (2, 5), (3, 6)]
 # >>> zip(*zipped)          # 与 zip 相反，*zipped 可理解为解压，返回二维矩阵式
 # [(1, 2, 3), (4, 5, 6)]
+
+# Vertical scanning
 class Solution3:
     def longestCommonPrefix(self, strs):
         if not strs:
@@ -61,7 +70,9 @@ class Solution3:
             chars: ('w', 'w', 'g')
             """
             if len(set(chars)) > 1:
-                return strs[0][:i]
+                return strs[0][:i]  # stop loop
+            # strs[0][:2]
+            # Out: 'flo'
         return min(strs)
 
 
