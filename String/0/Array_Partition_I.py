@@ -21,7 +21,3 @@ class Solution1:
 
 s = Solution1()
 print(s.arrayPairSum([1,4,3,2]))
-# s = Solution2()
-# print(s)
-# s = Solution3()
-# print(s)
