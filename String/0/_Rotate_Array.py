@@ -14,6 +14,9 @@
 #         """
 #         return nums.append(nums.pop)
 
+from collections import deque
+
+
 class Solution1:
     def rotate(self, nums, k):
         """
@@ -24,10 +27,28 @@ class Solution1:
         return nums
 
 
+# deque has a attribute rotate
+class Solution2:
+    def rotate(self, nums, k):
+        c = deque(nums)
+        c.rotate(k)
+        nums[:] = list(c)
+        return nums
+
+
+# insert the values popped
+class Solution3:
+    def rotate(self, nums, k):
+        while k > 0:
+            nums.insert(0, nums.pop())
+            k -= 1
+        return nums
+
+
 # Approach 1: Brute Force
 # The simples approach is to rotate all the elements of the array in kk steps
 # by rotating the elements by 1 unit in each step.
-class Solution2:
+class Solution4:
     def rotate(self, nums, k):
         for i in range(k):
             previous = nums[-1]
@@ -40,7 +61,7 @@ class Solution2:
 # We use an extra array in which we place every element of the array at its correct position
 # i.e. the number at index ii in the original array is placed at the index (i + k) %
 # length of array. Then, we copy the new array to the original one.
-class Solution3:
+class Solution5:
     def rotate(self, nums, k):
         n = len(nums)
         a = [0] * n
@@ -86,7 +107,7 @@ We will reach such a number after a total of k cycles.
 Now, the total count of numbers exclusive numbers placed at their correct position will be k * (n/k) = n
 Thus, all the numbers will be placed at their correct position.
 """
-# class Solution4:
+# class Solution6:
 #     def rotate(self, nums, k):
 #         n = len(nums)
 #         k %= n
@@ -112,4 +133,6 @@ print(s.rotate([1, 2, 3, 4, 5, 6, 7], 1))
 s = Solution3()
 print(s.rotate([1, 2, 3, 4, 5, 6, 7], 1))
 s = Solution4()
+print(s.rotate([1, 2, 3, 4, 5, 6, 7], 1))
+s = Solution5()
 print(s.rotate([1, 2, 3, 4, 5, 6, 7], 1))
