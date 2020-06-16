@@ -16,6 +16,8 @@ class Solution1:
             sum += nums[i]
         return sum
 
+# equal to: return sum(sorted(nums)[::2])    more python
+
 
 s = Solution1()
 print(s.arrayPairSum([1,4,3,2]))
