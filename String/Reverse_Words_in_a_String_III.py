@@ -13,5 +13,19 @@ class Solution1:
         return " ".join(s[::-1].split()[::-1])
 
 
+class Solution2:
+    def reverseWords(self, s):
+        s_list = s.split()
+        s_reverse = ''
+        for i, word in enumerate(s_list):
+            r_word = word[::-1]
+            s_reverse += r_word
+            if i < len(s_list) - 1:
+                s_reverse += ' '   # add space
+        return s_reverse
+
+
 s = Solution1()
+print(s.reverseWords("Let's take LeetCode contest"))
+s = Solution2()
 print(s.reverseWords("Let's take LeetCode contest"))
