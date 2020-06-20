@@ -25,6 +25,17 @@ class Solution1:
 
         return triangle
 
+"""
+ret = []
+for i in range(numRows):
+    ret.append([1])
+    for j in range(1,i+1):
+        if j == i:
+            ret[i].append(1)
+        else:
+            ret[i].append(ret[i-1][j-1]+ret[i-1][j])
+    :return ret
+"""
 
 s = Solution1()
 print(s.generate(5))

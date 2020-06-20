@@ -74,6 +74,9 @@
 #         print(myArray)
 
 
+# Set four model for move
+# 0: go right 1: go down 2: go left 3. go up
+
 s = Solution()
 print(s.spiralOrder([
     [1, 2, 3, 4],
