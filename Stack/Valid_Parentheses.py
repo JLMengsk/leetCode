@@ -33,5 +33,31 @@ class Solution1(object):
                 stack.append(i)
         return len(stack) == 1
 
+
+class Solution2(object):
+    def isValid(self, s):
+        d = {'(': ')', '{': '}', '[': ']'}
+        stack = []
+        n = 0
+        for c in s:
+            if c == '(' or c == '{' or c == '[':
+                stack.append(c)
+                n += 1
+            else:
+                if n < 1:
+                    return False
+                if d[stack[n - 1]] == c:
+                    stack.pop()
+                    n -= 1
+                else:
+                    return False
+        if n == 0:
+            return True
+        else:
+            return False
+
+
 s = Solution1()
-print(s)
+print(s.isValid("{[]}"))
+s = Solution2()
+print(s.isValid("{[]}"))
