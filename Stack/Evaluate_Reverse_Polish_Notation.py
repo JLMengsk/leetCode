@@ -5,6 +5,8 @@
 # @File     : Evaluate_Reverse_Polish_Notation.py
 # @Software : PyCharm
 
+# Evaluate the value of an arithmetic expression in Reverse Polish Notation.
+# Valid operators are +, -, *, /. Each operand may be an integer or another expression.
 
 # There is a big difference between C and python
 # Python: (-1)/2=-1 是向下取整的
