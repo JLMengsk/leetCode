@@ -112,6 +112,7 @@ def postOrder1(self,root):
             myStack.append(node)
             node = node.right
             
+            
 def postOrder2(self,root):
     if not root:
         return []
