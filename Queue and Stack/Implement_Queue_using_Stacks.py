@@ -85,6 +85,51 @@ class MyQueue2:
         """
         return not self.inStack and not self.outStack
 
+class MyQueue3:
+
+    def __init__(self):
+        """
+        Initialize your data structure here.
+        """
+        self.q = []
+
+    def push(self, x):
+        """
+        Push element x to the back of queue.
+        """
+        self.q.append(x)
+
+    def pop(self):
+        """
+        Removes the element from in front of queue and returns that element.
+        """
+        res = None
+        if len(self.q) > 0:
+            res = self.q[0]
+            del self.q[0]
+            return res
+        else:
+            return res
+
+    def peek(self):
+        """
+        Get the front element.
+        """
+        res = None
+        if len(self.q) > 0:
+            res = self.q[0]
+            return res
+        else:
+            return res
+
+    def empty(self):
+        """
+        Returns whether the queue is empty.
+        """
+        if len(self.q) <= 0:
+            return True
+        else:
+            return False
 
 # Your MyQueue object will be instantiated and called as such:
 # obj = MyQueue()
